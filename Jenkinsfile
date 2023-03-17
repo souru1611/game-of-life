@@ -15,7 +15,7 @@ pipeline {
 					sh "docker cp /mnt/game/gameoflife-web/target/gameoflife.war tomcatserver6:/usr/local/tomcat/wepapps "
 					sh "chmod -R 777 /mnt/game/gameoflife-web/target/gameoflife.war "
 					sh "docker exec tomcatserver6  /usr/local/tomcat/bin/./startup.sh "
-					sh "docker exec tomcatserver6  chmod -R 777 /usr/local/tomcat "
+					sh "docker exec tomcatserver6  chmod -R 777 tomcatserver6:/usr/local/tomcat "
 
 				}
 
