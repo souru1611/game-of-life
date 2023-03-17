@@ -11,7 +11,7 @@ pipeline {
 				steps {
 					sh "mvn clean install"
 					sh "systemctl start docker "
-					sh "docker run -d --name tomcatserver tomcat"
+					sh "docker run -d --name tomcatserver1 tomcat"
 					
 					sh "docker cp /mnt/game/gameoflife-web/target/gameoflife.war tomcatserver:/usr/local/tomcat/wepapps "
 					sh "chmod -R 777 /mnt/game/game-of-life "
